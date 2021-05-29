@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>edit abiturient</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <style>.field{width:200px;}</style>
+</head>
+
+<body>
+    <h1>Изменить данные</h1>
+    <form action="/edit" method="POST">
+        <input type="hidden" name="id" value="{{Menu.id}}" />
+        
+        <label>Наименование</label><br>
+        <input name="name" class="field" value="{{Menu.name}}" /><br><br>
+
+        <label>Описание</label><br>
+        <input name="description" class="field" value="{{Menu.description}}" /><br><br>
+        
+        <label>Категория</label><br>
+        <input name="category" class="field" min="0" max="300" value="{{Menu.category}}" /><br><br>
+
+        <label>Стоимость</label><br>
+        <input name="price" type="number" class="field" value="{{Menu.price}}" /><br><br>
+        
+        <input type="submit" value="Сохранить" />
+    </form>
+    <a href="/">На главную</a>
+</body>
+
+<html>

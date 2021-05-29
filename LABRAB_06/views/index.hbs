@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>LittleCafe</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+
+<body>
+    <center>
+    <h1>Меню</h1>
+    <p><a href="/recover">Восстановить исходный список</a></p>
+    <p><a href="/create">Добавить ассортимент</a></p>
+    <p style="font-weight: 700">Горячее</p>
+    <table>
+        <tr>
+            <th>Редактор</th>
+            <th>Наименование&nbsp;<a href="/sort/name.ASC">▲</a><a href="/sort/name.DESC">▼</a></th>
+            <th>Описание</th>
+            <th>Цена&nbsp;<a href="/sort/price.ASC">▲</a><a href="/sort/price.DESC">▼</a></th>
+        </tr>
+        {{#each hot_food}}
+            <tr>
+                <td width=180 class="editor">
+                    <form action="/edit/{{this.id}}" method="GET" style="display:inline;">
+                        <input type="submit" value="Изменить" />
+                    </form>
+                    <form action="/delete/{{this.id}}" method="POST" style="display:inline;">
+                        <input type="submit" value="Удалить" />
+                    </form>
+                </td>
+                <td>{{this.name}}</td>
+                <td>{{this.description}}</td>
+                <td>{{this.price}}</td>
+            </tr>
+        {{/each}}
+    </table>
+        <table>
+    <p style="font-weight: 700">Напитки</p>
+        <tr>
+            <th>Редактор</th>
+            <th>Наименование&nbsp;<a href="/sort1/name.ASC">▲</a><a href="/sort1/name.DESC">▼</a></th>
+            <th>Описание</th>
+            <th>Цена&nbsp;<a href="/sort1/price.ASC">▲</a><a href="/sort1/price.DESC">▼</a></th>
+        </tr>
+        {{#each drinks}}
+            <tr>
+                <td width=180 class="editor">
+                    <form action="/edit/{{this.id}}" method="GET" style="display:inline;">
+                        <input type="submit" value="Изменить" />
+                    </form>
+                    <form action="/delete/{{this.id}}" method="POST" style="display:inline;">
+                        <input type="submit" value="Удалить" />
+                    </form>
+                </td>
+                <td>{{this.name}}</td>
+                <td>{{this.description}}</td>
+                <td>{{this.price}}</td>
+            </tr>
+        {{/each}}
+    </table>
+    </center>
+</body>
+
+<html>

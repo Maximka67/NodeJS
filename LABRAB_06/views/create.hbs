@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>create abiturient</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <style>.field{width:200px;}</style>
+</head>
+
+<body>
+    <h1>Добавить</h1>
+    <form method="POST">        
+        <label>Наименование</label><br>
+        <input name="name" class="field" /><br><br>
+
+        <label>Описание</label><br>
+        <input name="description" class="field" /><br><br>
+
+        <label>Категория</label><br>
+        <input name="category" class="field" /><br><br>
+        
+        <label>Стоимость</label><br>
+        <input name="price" class="field" min="0" max="300" /><br><br>
+        
+        <input type="submit" value="Сохранить" />
+    </form>
+    <a href="/">На главную</a>
+</body>
+
+<html>
